@@ -10,6 +10,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Trends from "./Trends";
 
 function LeftSection() {
+    const users = useSelector((state) => state.users.value);
+
 
     return (
         <div className={styles.mainContainerLeft}>
@@ -19,8 +21,8 @@ function LeftSection() {
                 <div className={styles.currentUser}>
                     <div className={styles.avatar}></div>
                     <div>
-                        <p className={styles.name}>Name</p>
-                        <p className={styles.username}>@userName</p>
+                        <p className={styles.name}>{users.name}</p>
+                        <p className={styles.username}>@{users.name}</p>
                     </div>
                 </div>
             </div>

@@ -10,7 +10,10 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Trends from "./Trends";
 
+
 function Tweets() {
+  const login = useSelector((state) => state.users.value);
+  console.log(login)
   return (
     <div className={styles.mainSection}>
       <div className={styles.leftSection}>
