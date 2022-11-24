@@ -1,7 +1,7 @@
 import Tweets from "../components/Tweets";
 
-function Tweets(){
+function TweetsPages(){
     return <Tweets/>
 }
 
-export default Tweets
+export default TweetsPages
