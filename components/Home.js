@@ -5,18 +5,19 @@ import { faUser, faXmark, faEye } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 // import Moment from 'react-moment';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux';
 import Tweets from './Tweets';
 
 
 function Home() {
+  const router = useRouter()
   const [displayModalSignUp, setDisplayModalSignUp] = useState(false);
   const [displayModalSignIn, setDisplayModalSignIn] = useState(false);
-  const [signUpFirstName, setSignUpFirstName] = useState('');
-  const [signUpUsername, setSignUpUsername] = useState('');
-	const [signUpPassword, setSignUpPassword] = useState('');
-  const [signInUsername, setSignInUsername] = useState('');
-	const [signInPassword, setSignInPassword] = useState('');
+  const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
+	const [password, setPassword] = useState('');
+ 
   const showModalSignup = () => {
     setDisplayModalSignUp(!displayModalSignUp)
     console.log('click')
@@ -35,17 +36,28 @@ function Home() {
   }
   
   const handleRegister = () => {
-		fetch('http://localhost:3000/signup', {
+		fetch('http://localhost:3000/users/signup', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({Firstname: signUpFirstName, username: signUpUsername, password: signUpPassword }),
+			body: JSON.stringify({name: name, username: username, password: password }),
 		}).then(response => response.json())
 			.then(data => {
 				if (data.result) {
-					// setSignUpFirstName('');
-					// setSignUpUsername('');
-					// setSignUpPassword('');
-					// setIsModalVisible(false);
+          router.push("/tweets")
+				}
+			});
+	};
+
+  const handleSignin = () => {
+		fetch('http://localhost:3000/users/signin', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({username: username, password: password }),
+		}).then(response => response.json())
+			.then(data => {
+        console.log(data)
+				if (data.result) {
+					router.push("/tweets")
 				}
 			});
 	};
@@ -60,18 +72,18 @@ function Home() {
         <FontAwesomeIcon onClick={showModalSignup} icon={faXmark} className={styles.crossIcon} />
           <FontAwesomeIcon icon={faTwitter} className={styles.signLogo}/>
           <p>Create your Hackatweet account</p>
-					<input type="text" placeholder="Firstname" id="signFirstName" onChange={(e) => setSignUpFirstName(e.target.value)} value={signUpFirstName} />
-					<input type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setSignUpUsername(e.target.value)} value={signUpUsername} />
-					<input type="password" placeholder="Password" id="signUpPassword" onChange={(e) => setSignUpPassword(e.target.value)} value={signUpPassword} />
+					<input type="text" placeholder="Firstname" id="signFirstName" onChange={(e) => setName(e.target.value)} value={name} />
+					<input type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setUsername(e.target.value)} value={username} />
+					<input type="password" placeholder="Password" id="signUpPassword" onChange={(e) => setPassword(e.target.value)} value={password} />
 					<div id="register" onClick={() => handleRegister()} className={styles.btnSignUp}>Register</div>
         </div>
         <div className={styles.modalSignup} style={modalSignInStyle}>
         <FontAwesomeIcon onClick={showModalSignIn} icon={faXmark} className={styles.crossIcon} />
           <FontAwesomeIcon icon={faTwitter} className={styles.signLogo}/>
           <p>Sign-In</p>
-					<input type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} />
-					<input type="password" placeholder="Password" id="signUpPassword" onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} />
-					<div id="register" onClick={() => handleRegister()} className={styles.btnSignUp}>Sign-In</div>
+					<input type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setUsername(e.target.value)} value={username} />
+					<input type="password" placeholder="Password" id="signUpPassword" onChange={(e) => setPassword(e.target.value)} value={password} />
+					<div id="register" onClick={() => handleSignin()} className={styles.btnSignUp}>Sign-In</div>
         </div>
    
 
