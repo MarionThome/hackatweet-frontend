@@ -8,10 +8,12 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux';
 import Tweets from './Tweets';
+import { login } from '../reducers/users';
 
 
 function Home() {
   const router = useRouter()
+  const dispatch = useDispatch();
   const [displayModalSignUp, setDisplayModalSignUp] = useState(false);
   const [displayModalSignIn, setDisplayModalSignIn] = useState(false);
   const [name, setName] = useState('');
@@ -43,7 +45,10 @@ function Home() {
 		}).then(response => response.json())
 			.then(data => {
 				if (data.result) {
-          router.push("/tweets")
+          dispatch(login({name : name, username : username}))
+          setTimeout(function(){
+            router.push("/tweets")
+         }, 1000);
 				}
 			});
 	};
@@ -55,9 +60,13 @@ function Home() {
 			body: JSON.stringify({username: username, password: password }),
 		}).then(response => response.json())
 			.then(data => {
-        console.log(data)
+        
 				if (data.result) {
-					router.push("/tweets")
+          dispatch(login({name : data.data.name, username : username}))
+          setTimeout(function(){
+            router.push("/tweets")
+         }, 1000);
+					
 				}
 			});
 	};
