@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faUser, faXmark, faEye } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
-
 // import Moment from 'react-moment';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';

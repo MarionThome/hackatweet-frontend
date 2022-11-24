@@ -1,7 +1,8 @@
 import Trends from "../components/Trends";
 
-function Trends(){
+function TrendsPages(){
+    
     return <Trends/>
 }
 
-export default Trends
+export default TrendsPages

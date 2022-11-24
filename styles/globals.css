@@ -3,6 +3,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #151d2d;
 }
 @font-face {
   font-family: 'mont-heavy';
@@ -22,4 +23,9 @@ body {
 }
 * {
   box-sizing: border-box;
+}
+
+p{
+  color: white;
+  font-family: 'mont-heavy';
 }
