@@ -14,10 +14,17 @@ function Tweets() {
   return (
     <div className={styles.mainSection}>
       <div className={styles.leftSection}>
-        <LeftSection/>
+        <LeftSection />
       </div>
       <div className={styles.middleSection}>
-      <h2>Home</h2>
+        <h2>Home</h2>
+        <div className={styles.tweetPostContainer}>
+          <input type="text" placeholder="Post something and try to be nice and respectfull" />
+          <div className={styles.posterBottom}>
+            <span className={styles.stringCounter}>4/280</span>
+            <div className={styles.btnTweet}>Tweet</div>
+          </div>
+        </div>
       </div>
       <div className={styles.rightSection}>
         <h2>Trends</h2>
