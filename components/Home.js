@@ -2,7 +2,7 @@ import styles from '../styles/Home.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import Link from 'next/link';
-// import { Modal } from 'antd';
+import { Modal } from 'antd';
 // import Moment from 'react-moment';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,9 +10,27 @@ import Tweets from './Tweets';
 
 
 function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModalSignup = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOkSignup = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancelSignup = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div>
       <main className={styles.main}>
+      <Modal title="Basic Modal" open={isModalOpen} onOk={handleOkSignup} onCancel={handleCancelSignup}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
         <div className={styles.imageback}>
           <FontAwesomeIcon icon={faTwitter} className={styles.iconBack} />
         </div>
@@ -21,7 +39,7 @@ function Home() {
           <h2>Join Hackatweet today.</h2>
 
           <div className={styles.signButtonsContainer}>
-            <div className={styles.btnSignUp}>Sign up</div>
+            <div onClick={showModalSignup} className={styles.btnSignUp}>Sign up</div>
             <p>Already have an account?</p>
             <div className={styles.btnSignIn}>Sign in</div>
           </div>
