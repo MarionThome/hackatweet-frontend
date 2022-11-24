@@ -6,6 +6,7 @@ import Link from 'next/link';
 // import Moment from 'react-moment';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Tweets from './Tweets';
 
 
 function Home() {
