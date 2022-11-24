@@ -33,7 +33,23 @@ function Home() {
   let modalSignInStyle = {'display': 'none'}
   if(displayModalSignIn) {
     modalSignInStyle = {'display': 'flex'} 
-  } 
+  }
+  
+  const handleRegister = () => {
+		fetch('http://localhost:3000/signup', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({Firstname: signUpFirstName, username: signUpUsername, password: signUpPassword }),
+		}).then(response => response.json())
+			.then(data => {
+				if (data.result) {
+					// setSignUpFirstName('');
+					// setSignUpUsername('');
+					// setSignUpPassword('');
+					// setIsModalVisible(false);
+				}
+			});
+	};
 
 
   
