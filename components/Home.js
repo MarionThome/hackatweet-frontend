@@ -1,12 +1,31 @@
 import styles from '../styles/Home.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import Link from 'next/link';
+// import { Modal } from 'antd';
+// import Moment from 'react-moment';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 function Home() {
   return (
     <div>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <div className={styles.imageback}>
+          <FontAwesomeIcon icon={faTwitter} className={styles.iconBack} />
+        </div>
+        <div className={styles.signContainer}>
+          <h1>See what's happening</h1>
+          <h2>Join Hackatweet today.</h2>
+
+          <div className={styles.signButtonsContainer}>
+            <div className={styles.btnSignUp}>Sign up</div>
+            <p>Already have an account?</p>
+            <div className={styles.btnSignIn}>Sign in</div>
+          </div>
+        </div>
+
       </main>
     </div>
   );

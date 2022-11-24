@@ -4,7 +4,22 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
+@font-face {
+  font-family: 'mont-heavy';
+  src: url(../public/Mont-HeavyDEMO.otf);
+}
+@font-face {
+  font-family: 'verdana';
+  src: url(../public/verdana.ttf);
+}
+@font-face {
+  font-family: 'verdana-bold';
+  src: url(../public/verdana-bold.ttf);
+}
+@font-face {
+  font-family: 'verdana_bold-italic';
+  src: url(../public/verdana-bold-italic.ttf);
+}
 * {
   box-sizing: border-box;
 }
