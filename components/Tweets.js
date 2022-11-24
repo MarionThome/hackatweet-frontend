@@ -16,8 +16,26 @@ function Tweets() {
       <div className={styles.leftSection}>
         <LeftSection/>
       </div>
-      <div className={styles.middleSection}></div>
-      <div className={styles.rightSection}></div>
+      <div className={styles.middleSection}>
+      <h2>Home</h2>
+      </div>
+      <div className={styles.rightSection}>
+        <h2>Trends</h2>
+        <div className={styles.trendsContainer}>
+          <div className={styles.itemTrend}>
+            <h3>#hackatweet</h3>
+            <span>2 Tweets</span>
+          </div>
+          <div className={styles.itemTrend}>
+            <h3>#first</h3>
+            <span>2 Tweets</span>
+          </div>
+          <div className={styles.itemTrend}>
+            <h3>#cenation</h3>
+            <span>2 Tweets</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

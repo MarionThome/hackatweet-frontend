@@ -11,16 +11,19 @@ import Trends from "./Trends";
 
 function LeftSection() {
 
-    return(
+    return (
         <div className={styles.mainContainerLeft}>
-        <FontAwesomeIcon icon={faTwitter} className={styles.iconBack} />
-        <div className={styles.userinfos}>
-            <div className={styles.imgContainer}></div>
-            <div>
-                <p className={styles.name}>Name</p>
-                <p className={styles.username}>@userName</p>
+            <FontAwesomeIcon icon={faTwitter} className={styles.iconBack} />
+            <div className={styles.userinfos}>
+                <div className={styles.imgContainer}></div>
+                <div className={styles.currentUser}>
+                    <div className={styles.avatar}></div>
+                    <div>
+                        <p className={styles.name}>Name</p>
+                        <p className={styles.username}>@userName</p>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     )
 }

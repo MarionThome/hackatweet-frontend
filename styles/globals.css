@@ -29,3 +29,15 @@ p{
   color: white;
   font-family: 'mont-heavy';
 }
+h2{
+  color: white;
+  font-family: 'mont-heavy';
+}
+h3{
+  color: white;
+  font-weight: bolder;
+  margin: 0;
+}
+h3:hover{
+  cursor: pointer;
+}

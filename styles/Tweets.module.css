@@ -11,17 +11,34 @@
 .leftSection{
     height: 100vh;
     width : 25%;
-    border-right : 1px solid #56667a
+    border-right : 1px solid #56667a;
 }
 
 .rightSection{
+    padding: 0 20px;
     height: 100vh;
     width : 25%;
-    border-left : 1px solid #56667a
+    border-left : 1px solid #56667a;
 }
+.trendsContainer{
+    background-color: #1B222D;
+    padding: 10px;
+    border-radius: 10px;
+}
+.itemTrend{
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding-left: 5px;
+}
+.itemTrend:hover{
+    background-color: #272727;
 
+}
+.itemTrend span{
+color: #979797;
+}
 .middleSection{
     height: 100vh;
     width : 50%;
-    
+    padding: 0 20px;
 }
