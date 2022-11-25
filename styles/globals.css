@@ -55,4 +55,18 @@ h3:hover{
   font-weight: 300;
   margin-top: 0px;
 }
-
+.btnLogout{
+  color: white;
+  cursor: pointer;
+  border: 1px solid  white;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 20px;
+  margin-left: 20px;
+}
+.btnLogout:hover{
+background-color: white;
+color: #151d2d;
+transition: 0.5s ease-in-out;
+}

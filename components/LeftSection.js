@@ -7,11 +7,15 @@ import Link from "next/link";
 // import Moment from 'react-moment';
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import {logout} from '../reducers/users';
 
 
 function LeftSection() {
     const users = useSelector((state) => state.users.value);
-
+    const dispatch= useDispatch()
+    const clickLogout = () => {
+        dispatch(logout())
+    }
 
     return (
         <div className={styles.mainContainerLeft}>
@@ -24,6 +28,7 @@ function LeftSection() {
                         <p className={styles.name}>{users.name}</p>
                         <p className="username">@{users.name}</p>
                     </div>
+                    <div onClick={() => clickLogout()} className="btnLogout">Log Out</div>
                 </div>
             </div>
         </div>
