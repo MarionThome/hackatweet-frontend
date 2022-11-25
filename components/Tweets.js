@@ -42,7 +42,11 @@ function Tweets() {
       </div>
       <div className={styles.middleSection}>
         <div className={styles.middleHead}>
+<<<<<<< HEAD
       
+=======
+        
+>>>>>>> e51f18267c8922201326e9e739d1832f9754ed40
           <h2>Home</h2>
           <div className={styles.tweetPostContainer}>
             <input type="text-area" onChange={(e) => setTweetToPost(e.target.value)} value={tweetToPost} placeholder="Post something and try to be nice and respectfull" />
