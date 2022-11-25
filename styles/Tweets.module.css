@@ -40,7 +40,7 @@ color: #979797;
 .middleSection{
     height: 100vh;
     width : 50%;
-    /* padding: 0 20px; */
+    border-right : 1px solid #56667a;
 }
 .middleHead{
     border-bottom : 1px solid #56667a;
