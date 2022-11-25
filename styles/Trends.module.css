@@ -1,0 +1,19 @@
+
+.trendHeader{
+    display: flex;
+    flex-direction: column;
+}
+.trendSearch{
+    align-self: center;
+    background-color: #1B222D;
+    border-style: none;
+    width: 80%;
+    height: 35px;
+    border-radius: 20px;
+    color: white;
+    padding: 5px;
+}
+.trendSearch::placeholder{
+    color: white;
+    padding: 5px;
+}
