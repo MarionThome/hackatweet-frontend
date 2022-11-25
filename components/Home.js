@@ -19,6 +19,8 @@ function Home() {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
+
+  const isLogin = useSelector((state) => state.users.value)
  
   const showModalSignup = () => {
     setDisplayModalSignUp(!displayModalSignUp)
@@ -71,7 +73,9 @@ function Home() {
 			});
 	};
 
-
+  if(isLogin){
+    router.push("/tweets")
+  }
   
   return (
     <div>

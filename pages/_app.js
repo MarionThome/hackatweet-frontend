@@ -2,12 +2,13 @@ import '../styles/globals.css';
 import Head from 'next/head';
 import { Provider } from 'react-redux';
 import users from "../reducers/users"
+import tweets from '../reducers/tweets';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import storage from 'redux-persist/lib/storage';
 
-const reducers = combineReducers({ users }); // permet d'enregistrer les reducers
+const reducers = combineReducers({ users, tweets }); // permet d'enregistrer les reducers
 const persistConfig = { key: 'hackatweet-lacapsule-marion&julien', storage };
 
 const store = configureStore({

@@ -7,7 +7,7 @@ import Link from "next/link";
 // import Moment from 'react-moment';
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Trends from "./Trends";
+
 
 function LeftSection() {
     const users = useSelector((state) => state.users.value);
