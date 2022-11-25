@@ -81,5 +81,29 @@ color: #979797;
 }
 
 .tweetContainer{
-    padding: 0 20px;
+    /* padding: 0 20px; */
+}
+.tweetItem{
+    padding: 20px;
+    border-bottom: solid 1px #56667a;
+}
+.tweetHead{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.tweetHead span{
+    margin-left: 5px;
+    color: #56667a;
+}
+.tweetBody p{
+   font-family: unset;
+}
+.iconCoeur{
+    color: white;
+    cursor: pointer;
+}
+.likeCounter{
+    margin-left: 5px;
+    color: white;
 }

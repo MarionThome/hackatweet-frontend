@@ -19,10 +19,10 @@ function LeftSection() {
             <div className={styles.userinfos}>
                 <div className={styles.imgContainer}></div>
                 <div className={styles.currentUser}>
-                    <div className={styles.avatar}></div>
+                    <div className="avatar"></div>
                     <div>
                         <p className={styles.name}>{users.name}</p>
-                        <p className={styles.username}>@{users.name}</p>
+                        <p className="username">@{users.name}</p>
                     </div>
                 </div>
             </div>

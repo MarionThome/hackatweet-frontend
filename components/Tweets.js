@@ -3,6 +3,7 @@ import LeftSection from "./LeftSection";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faHeart} from '@fortawesome/free-solid-svg-icons';
 import Link from "next/link";
 // import { Modal } from 'antd';
 // import Moment from 'react-moment';
@@ -32,7 +33,21 @@ function Tweets() {
           </div>
         </div>
         <div className={styles.tweetContainer}>
-          
+          <div className={styles.tweetItem}>
+            <div className={styles.tweetHead}>
+              <div className="avatar"></div>
+              <p className={styles.name}>John</p>
+              <span className="username">@users.name</span>
+              <span>- 5 hours</span>
+            </div>
+            <div className={styles.tweetBody}>
+              <p>Welcome to #hackatweet guys !</p>
+            </div>
+            <div className={styles.tweetBottom}>
+            <FontAwesomeIcon icon={faHeart} className={styles.iconCoeur}/>
+            <span className={styles.likeCounter}>5</span>
+            </div>
+          </div>
         </div>
       </div>
       <div className={styles.rightSection}>
