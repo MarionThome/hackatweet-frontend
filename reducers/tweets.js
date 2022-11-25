@@ -24,10 +24,12 @@ export const tweetSlice = createSlice({
       console.log('fonction ok :',action.payload)
     },
     removeTweets: (state, action) => {
-      state.value = state.value.filter(e => e.tweet !== action.payload.tweet && e.date !== action.payload.date && e.username !== action.payload.username)
+
+      console.log('fonction ok :',action.payload)
+      state.value = state.value.filter(e =>(( e.date !== action.payload.date)))
     },
   },
 });
 
-export const { addTweets, logremoveTweetsout, initialiseTweets } = tweetSlice.actions;
+export const { addTweets, logremoveTweetsout, initialiseTweets, removeTweets } = tweetSlice.actions;
 export default tweetSlice.reducer;
