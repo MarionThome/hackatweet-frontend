@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTweets, initialiseTweets} from '../reducers/tweets';
 import Trends from "./Trends";
+import ItemTweet from "./ItemTweet";
 
 
 function Tweets() {
@@ -41,31 +42,18 @@ function Tweets() {
       </div>
       <div className={styles.middleSection}>
         <div className={styles.middleHead}>
-          <h2>Home</h2>
+        <Trends />
+          {/* <h2>Home</h2>
           <div className={styles.tweetPostContainer}>
             <input type="text-area" onChange={(e) => setTweetToPost(e.target.value)} value={tweetToPost} placeholder="Post something and try to be nice and respectfull" />
             <div className={styles.posterBottom}>
               <span className={styles.stringCounter}>{tweetToPost.length}/280</span>
               <div className={styles.btnTweet}>Tweet</div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className={styles.tweetContainer}>
-          <div className={styles.tweetItem}>
-            <div className={styles.tweetHead}>
-              <div className="avatar"></div>
-              <p className={styles.name}>John</p>
-              <span className="username">@users.name</span>
-              <span>- 5 hours</span>
-            </div>
-            <div className={styles.tweetBody}>
-              <p>Welcome to #hackatweet guys !</p>
-            </div>
-            <div className={styles.tweetBottom}>
-            <FontAwesomeIcon icon={faHeart} className={styles.iconCoeur}/>
-            <span className={styles.likeCounter}>5</span>
-            </div>
-          </div>
+          <ItemTweet/>
         </div>
       </div>
       <div className={styles.RightSection}>
