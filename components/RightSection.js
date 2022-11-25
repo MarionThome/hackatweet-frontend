@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 function RightSection(){
 
 
-    // const trends = 
+    
 
     return(
     <div>
