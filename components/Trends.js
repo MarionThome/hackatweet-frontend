@@ -10,10 +10,43 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Tweets from "./Tweets";
+import { addTweets, initialiseTweets } from "../reducers/tweets";
 
 function Trends() {
-  const [trendToSearch, setTrendToSearch] = useState("");
-  console.log(trendToSearch);
+  const [trendToSearch, setTrendToSearch] = useState("#");
+  const dispatch = useDispatch()
+  const tweets = useSelector((state) => state.tweets.value);
+
+
+  let itemTweet;
+  let content = []; 
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/tweets/#${trendToSearch}`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data) {
+          itemTweet = data.data.filter(e => e.hashtag.includes(trendToSearch))
+          dispatch(initialiseTweets(itemTweet.reverse()));
+          console.log("itemTweet", itemTweet)
+          console.log("content1", content)
+        }
+      });
+
+  }, [trendToSearch]);
+
+  const filteredTweet = tweets.map((data, i) => <ItemTweet key={i} {...data} />);
+
+
+  if(itemTweet){
+    content = itemTweet.map((data, i) => <ItemTweet key={i} {...data} />)
+  }
+
+  console.log("content", content)
+
   return (
     <div className={styles.mainSection}>
       <div className={styles.leftSection}>
@@ -33,7 +66,7 @@ function Trends() {
           </div>
         </div>
         <div className={styles.tweetContainer}>
-          <ItemTweet />
+          {filteredTweet}
         </div>
       </div>
       <div className={styles.rightSection}>
