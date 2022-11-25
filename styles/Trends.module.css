@@ -101,7 +101,8 @@ color: #979797;
 }
 
 .tweetContainer{
-    /* padding: 0 20px; */
+    height: 80vh;
+    overflow-y: scroll;
 }
 .tweetItem{
     padding: 20px;
