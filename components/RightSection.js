@@ -6,9 +6,23 @@ import Link from "next/link";
 // import Moment from 'react-moment';
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { updateHashtag } from "../reducers/hashtags"
+import { useRouter } from 'next/router'
 
 
 function RightSection(){
+    const router = useRouter()
+    const dispatch = useDispatch()
+    const hashtagToSave = useSelector((state) => state.hashtag.value)
+    console.log(hashtagToSave)
+
+    const handleRedirection = (name) => {
+      dispatch(updateHashtag(name))
+      setTimeout(function(){
+        router.push("/trends")
+     }, 1000);
+    }
+
 
     const tweets = useSelector((state) => state.tweets.value);
     const hashtags = tweets.map(e => e.hashtag.map(e => e.toLowerCase())).flat()
@@ -17,7 +31,7 @@ function RightSection(){
     const leftCollContent = uHashtags.map(e => {
         const filter = hashtags.filter(item => item === e)
         return <div className={styles.itemTrend}>
-            <h3>{e}</h3>
+            <h3 onClick={() => handleRedirection(e)}>{e}</h3>
             <span>{filter.length} Tweets</span>
         </div>
     })

@@ -8,18 +8,22 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {logout} from '../reducers/users';
+import {useRouter} from 'next/router'
+
 
 
 function LeftSection() {
+    const router = useRouter()
+    const dispatch = useDispatch()
     const users = useSelector((state) => state.users.value);
-    const dispatch= useDispatch()
     const clickLogout = () => {
         dispatch(logout())
     }
 
     return (
         <div className={styles.mainContainerLeft}>
-            <FontAwesomeIcon icon={faTwitter} className={styles.iconBack} />
+            <FontAwesomeIcon icon={faTwitter} className={styles.iconBack} onClick = {() => router.push("/tweets")
+     }/>
             <div className={styles.userinfos}>
                 <div className={styles.imgContainer}></div>
                 <div className={styles.currentUser}>

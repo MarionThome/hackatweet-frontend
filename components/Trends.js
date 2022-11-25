@@ -13,7 +13,9 @@ import Tweets from "./Tweets";
 import { addTweets, initialiseTweets } from "../reducers/tweets";
 
 function Trends() {
-  const [trendToSearch, setTrendToSearch] = useState("#");
+
+  const hashtagToSave = useSelector((state) => state.hashtag.value)
+  const [trendToSearch, setTrendToSearch] = useState(hashtagToSave);
   const dispatch = useDispatch()
   const tweets = useSelector((state) => state.tweets.value);
 
