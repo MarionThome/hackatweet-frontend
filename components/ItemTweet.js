@@ -4,21 +4,21 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faHeart} from '@fortawesome/free-solid-svg-icons';
 
 
-function ItemTweet() {
+function ItemTweet(props) {
     return (
         <div className={styles.tweetItem}>
             <div className={styles.tweetHead}>
                 <div className="avatar"></div>
-                <p className={styles.name}>John</p>
-                <span className="username">@users.name</span>
-                <span>- 5 hours</span>
+                <p className={styles.name}>{props.name}</p>
+                <span className="username">@{props.username}</span>
+                <span>{props.date}</span>
             </div>
             <div className={styles.tweetBody}>
-                <p>Welcome to #hackatweet guys !</p>
+                <p>{props.tweet}</p>
             </div>
             <div className={styles.tweetBottom}>
                 <FontAwesomeIcon icon={faHeart} className={styles.iconCoeur} />
-                <span className={styles.likeCounter}>5</span>
+                <span className={styles.likeCounter}>{props.likes}</span>
             </div>
         </div>
     )
