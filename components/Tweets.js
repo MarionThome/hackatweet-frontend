@@ -32,8 +32,11 @@ function Tweets() {
     })
   },[]);
 
+  
+
     const tweets = useSelector((state) => state.tweets.value);
     console.log(tweets)
+
 
   return (
     <div className={styles.mainSection}>
