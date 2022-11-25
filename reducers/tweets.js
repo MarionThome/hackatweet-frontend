@@ -12,10 +12,13 @@ const initialState = {
 //    hashtag : String
 // }
 
-export const userSlice = createSlice({
+export const tweetSlice = createSlice({
   name: 'tweets',
   initialState,
   reducers: {
+    initialiseTweets : (state, action) => {
+      state.value = action.payload
+    },
     addTweets: (state, action) => {
       state.value.push(action.payload)
     },
@@ -25,5 +28,5 @@ export const userSlice = createSlice({
   },
 });
 
-export const { addTweets, logremoveTweetsout } = userSlice.actions;
-export default userSlice.reducer;
+export const { addTweets, logremoveTweetsout, initialiseTweets } = tweetSlice.actions;
+export default tweetSlice.reducer;

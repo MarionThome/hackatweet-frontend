@@ -1,5 +1,6 @@
 import styles from "../styles/Tweets.module.css";
 import LeftSection from "./LeftSection";
+import RightSection from "./RightSection"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -9,13 +10,30 @@ import Link from "next/link";
 // import Moment from 'react-moment';
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { addTweets, initialiseTweets} from '../reducers/tweets';
 import Trends from "./Trends";
 
 
 function Tweets() {
+  const dispatch = useDispatch();
   const [tweetToPost, setTweetToPost] = useState('')
   const login = useSelector((state) => state.users.value);
-  console.log(login)
+
+
+  useEffect(() => {
+    fetch('http://localhost:3000/tweets', {
+			method: 'GET',
+			headers: { 'Content-Type': 'application/json' },
+		}).then(response => response.json()).then(data => {
+      if(data){
+          dispatch(initialiseTweets(data.data))
+      }
+    })
+  },[]);
+
+    const tweets = useSelector((state) => state.tweets.value);
+    console.log(tweets)
+
   return (
     <div className={styles.mainSection}>
       <div className={styles.leftSection}>
@@ -50,22 +68,8 @@ function Tweets() {
           </div>
         </div>
       </div>
-      <div className={styles.rightSection}>
-        <h2>Trends</h2>
-        <div className={styles.trendsContainer}>
-          <div className={styles.itemTrend}>
-            <h3>#hackatweet</h3>
-            <span>2 Tweets</span>
-          </div>
-          <div className={styles.itemTrend}>
-            <h3>#first</h3>
-            <span>2 Tweets</span>
-          </div>
-          <div className={styles.itemTrend}>
-            <h3>#cenation</h3>
-            <span>2 Tweets</span>
-          </div>
-        </div>
+      <div className={styles.RightSection}>
+      <RightSection />
       </div>
     </div>
   );
