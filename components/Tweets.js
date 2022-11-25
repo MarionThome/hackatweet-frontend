@@ -36,8 +36,7 @@ function Tweets() {
 
     const tweets = useSelector((state) => state.tweets.value);
     console.log(tweets)
-
-
+  const itemTweet = tweets.map((data, i) => <ItemTweet key={i} {...data}/> )
   return (
     <div className={styles.mainSection}>
       <div className={styles.leftSection}>
@@ -56,7 +55,7 @@ function Tweets() {
           </div>
         </div>
         <div className={styles.tweetContainer}>
-          <ItemTweet/>
+         {itemTweet}
         </div>
       </div>
       <div className={styles.RightSection}>
