@@ -17,3 +17,113 @@
     color: white;
     padding: 5px;
 }
+
+.mainSection {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    /* align-items: center; */
+    min-height: 100vh;
+    width: 100%;
+    /* padding: 4rem 0; */
+  }
+
+.leftSection{
+    height: 100vh;
+    width : 25%;
+    border-right : 1px solid #56667a;
+}
+
+.rightSection{
+    padding: 0 20px;
+    height: 100vh;
+    width : 25%;
+    border-left : 1px solid #56667a;
+}
+.trendsContainer{
+    background-color: #1B222D;
+    padding: 10px;
+    border-radius: 10px;
+}
+.itemTrend{
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding-left: 5px;
+}
+.itemTrend:hover{
+    background-color: #272727;
+
+}
+.itemTrend span{
+color: #979797;
+}
+.middleSection{
+    height: 100vh;
+    width : 50%;
+    /* padding: 0 20px; */
+}
+.middleHead{
+    border-bottom : 1px solid #56667a;
+    padding: 0 20px 20px;
+}
+
+.tweetPostContainer{
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tweetPostContainer input{
+ width: 75%;
+ height: 5vh;
+ background-color: unset;
+ color: white;
+ border-style: none;
+ border-bottom: solid 1px white;
+}
+
+.posterBottom{
+    margin-top: 10px;
+    display: flex;
+    color: white;
+    width: 75%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btnTweet{
+    background-color: #2E77C7;
+    padding: 4px 15px;
+    border-radius: 10px;
+    text-align: center;
+   margin-left: 10px;
+}
+
+.tweetContainer{
+    /* padding: 0 20px; */
+}
+.tweetItem{
+    padding: 20px;
+    border-bottom: solid 1px #56667a;
+}
+.tweetHead{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.tweetHead span{
+    margin-left: 5px;
+    color: #56667a;
+}
+.tweetBody p{
+   font-family: unset;
+}
+.iconCoeur{
+    color: white;
+    cursor: pointer;
+}
+.likeCounter{
+    margin-left: 5px;
+    color: white;
+}

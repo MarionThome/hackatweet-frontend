@@ -42,15 +42,15 @@ function Tweets() {
       </div>
       <div className={styles.middleSection}>
         <div className={styles.middleHead}>
-        <Trends />
-          {/* <h2>Home</h2>
+        
+          <h2>Home</h2>
           <div className={styles.tweetPostContainer}>
             <input type="text-area" onChange={(e) => setTweetToPost(e.target.value)} value={tweetToPost} placeholder="Post something and try to be nice and respectfull" />
             <div className={styles.posterBottom}>
               <span className={styles.stringCounter}>{tweetToPost.length}/280</span>
               <div className={styles.btnTweet}>Tweet</div>
             </div>
-          </div> */}
+          </div>
         </div>
         <div className={styles.tweetContainer}>
           <ItemTweet/>
