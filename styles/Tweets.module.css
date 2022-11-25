@@ -53,8 +53,7 @@ color: #979797;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-y: scroll;
-    height: 76vh;
+  
 }
 .tweetPostContainer input{
  width: 75%;
@@ -83,7 +82,8 @@ color: #979797;
 }
 
 .tweetContainer{
-    /* padding: 0 20px; */
+    overflow-y: scroll;
+    height: 76vh;
 }
 .tweetItem{
     padding: 20px;
