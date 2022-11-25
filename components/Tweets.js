@@ -28,7 +28,7 @@ function Tweets() {
 			headers: { 'Content-Type': 'application/json' },
 		}).then(response => response.json()).then(data => {
       if(data){
-          dispatch(initialiseTweets(data.data))
+          dispatch(initialiseTweets(data.data.reverse()))
       }
     })
   },[]);
@@ -51,7 +51,7 @@ fetch('http://localhost:3000/tweets/newtweet', {
   
 
     const tweets = useSelector((state) => state.tweets.value);
-    console.log(tweets)
+    
   const itemTweet = tweets.map((data, i) => <ItemTweet key={i} {...data}/> )
   return (
     <div className={styles.mainSection}>
