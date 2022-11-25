@@ -20,7 +20,8 @@ export const tweetSlice = createSlice({
       state.value = action.payload
     },
     addTweets: (state, action) => {
-      state.value.push(action.payload)
+      state.value.unshift(action.payload)
+      console.log('fonction ok :',action.payload)
     },
     removeTweets: (state, action) => {
       state.value = state.value.filter(e => e.tweet !== action.payload.tweet && e.date !== action.payload.date && e.username !== action.payload.username)

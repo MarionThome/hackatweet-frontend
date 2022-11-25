@@ -17,8 +17,9 @@ import ItemTweet from "./ItemTweet";
 
 function Tweets() {
   const dispatch = useDispatch();
-  const [tweetToPost, setTweetToPost] = useState('')
-  const login = useSelector((state) => state.users.value);
+  const [tweetToPost, setTweetToPost] = useState('');
+  const currentUser = useSelector((state) => state.users.value);
+  
 
 
   useEffect(() => {
@@ -32,6 +33,21 @@ function Tweets() {
     })
   },[]);
 
+  const sentNewTweet= () => {
+fetch('http://localhost:3000/tweets/newtweet', {
+      method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({name: currentUser.name, username: currentUser.username, tweet: tweetToPost }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.data)
+        dispatch(addTweets(data.data))
+      } 
+      )
+      .then(setTweetToPost(''))
+}
+  
   
 
     const tweets = useSelector((state) => state.tweets.value);
@@ -50,7 +66,7 @@ function Tweets() {
             <input type="text-area" onChange={(e) => setTweetToPost(e.target.value)} value={tweetToPost} placeholder="Post something and try to be nice and respectfull" />
             <div className={styles.posterBottom}>
               <span className={styles.stringCounter}>{tweetToPost.length}/280</span>
-              <div className={styles.btnTweet}>Tweet</div>
+              <div onClick={() => sentNewTweet()} className={styles.btnTweet}>Tweet</div>
             </div>
           </div>
         </div>
