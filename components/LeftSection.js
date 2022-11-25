@@ -7,15 +7,18 @@ import Link from "next/link";
 // import Moment from 'react-moment';
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import {useRouter} from 'next/router'
+
 
 
 function LeftSection() {
+    const router = useRouter()
+    const dispatch = useDispatch()
     const users = useSelector((state) => state.users.value);
-
-
     return (
         <div className={styles.mainContainerLeft}>
-            <FontAwesomeIcon icon={faTwitter} className={styles.iconBack} />
+            <FontAwesomeIcon icon={faTwitter} className={styles.iconBack} onClick = {() => router.push("/tweets")
+     }/>
             <div className={styles.userinfos}>
                 <div className={styles.imgContainer}></div>
                 <div className={styles.currentUser}>
