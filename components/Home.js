@@ -73,9 +73,10 @@ function Home() {
 			});
 	};
 
-  if(isLogin){
-    router.push("/tweets")
-  }
+  // if(isLogin.name){
+  //   console.log(isLogin)
+  //   router.push("/tweets")
+  // }
   
   return (
     <div>

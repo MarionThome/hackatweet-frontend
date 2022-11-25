@@ -18,6 +18,9 @@ function LeftSection() {
     const users = useSelector((state) => state.users.value);
     const clickLogout = () => {
         dispatch(logout())
+        setTimeout(function(){
+            router.push("/")
+         }, 1000);
     }
 
     return (
