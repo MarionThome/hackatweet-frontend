@@ -53,6 +53,8 @@ color: #979797;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y: scroll;
+    height: 76vh;
 }
 .tweetPostContainer input{
  width: 75%;
