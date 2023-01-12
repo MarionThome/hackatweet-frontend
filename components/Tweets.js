@@ -20,7 +20,7 @@ function Tweets() {
   const currentUser = useSelector((state) => state.users.value);
 
   useEffect(() => {
-    fetch("http://localhost:3000/tweets", {
+    fetch("https://hackatweet-backend-five.vercel.app/tweets", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
@@ -33,7 +33,7 @@ function Tweets() {
   }, []);
 
   const sentNewTweet = () => {
-    fetch("http://localhost:3000/tweets/newtweet", {
+    fetch("https://hackatweet-backend-five.vercel.app/tweets/newtweet", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

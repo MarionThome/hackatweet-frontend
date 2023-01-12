@@ -40,7 +40,7 @@ function Home() {
   }
   
   const handleRegister = () => {
-		fetch('http://localhost:3000/users/signup', {
+		fetch('https://hackatweet-backend-five.vercel.app/users/signup', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({name: name, username: username, password: password }),
@@ -56,7 +56,7 @@ function Home() {
 	};
 
   const handleSignin = () => {
-		fetch('http://localhost:3000/users/signin', {
+		fetch('https://hackatweet-backend-five.vercel.app/users/signin', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({username: username, password: password }),

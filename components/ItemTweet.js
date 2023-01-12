@@ -16,7 +16,7 @@ function ItemTweet(props) {
     const deleteTweet =() => {
         console.log('props:',props)
         dispatch(removeTweets(props))
-        fetch('http://localhost:3000/tweets/delete', {
+        fetch('https://hackatweet-backend-five.vercel.app/tweets/delete', {
             method:'DELETE',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({tweet: props.tweet, username: props.username }),

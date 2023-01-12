@@ -24,7 +24,7 @@ function Trends() {
   let content = []; 
 
   useEffect(() => {
-    fetch(`http://localhost:3000/tweets/#${trendToSearch}`, {
+    fetch(`https://hackatweet-backend-five.vercel.app/tweets/#${trendToSearch}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
